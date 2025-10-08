@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası</title>
+    <title>Privacy Policy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chosen Palette: "Calm Neutrals" - Açık gri/bej zemin, okunabilir koyu metin ve sakin bir mavi vurgu rengi ile profesyonel ve sakin bir görünüm hedeflendi. -->
-    <!-- Application Structure Plan: Sayfa, solda sabit bir gezinme menüsü ve sağda içerik alanı olmak üzere iki sütunlu bir yapıda tasarlandı. Kullanıcılar, gezinme menüsündeki başlıklara tıklayarak sayfanın ilgili bölümüne anında ve akıcı bir şekilde ulaşabilir. Bu yapı, uzun ve yasal bir metni sindirilebilir ve kolayca taranabilir hale getirir. Kullanıcı, tüm metni okumak zorunda kalmadan doğrudan ilgilendiği konuya atlayabilir. Bu, standart bir metin belgesine göre çok daha üstün bir kullanıcı deneyimi sunar. -->
-    <!-- Visualization & Content Choices: Bu bir metin belgesi olduğu için grafiksel veri görselleştirme (Chart.js vb.) kullanılmamıştır. Bunun yerine, "bilgiyi organize etme ve gezinme" hedefine odaklanılmıştır. Belgedeki ana başlıklar, tıklanabilir gezinme elemanlarına dönüştürülmüştür. Etkileşim, Vanilla JavaScript ile yönetilen akıcı kaydırma (smooth scroll) ve kullanıcının sayfada nerede olduğunu gösteren "scroll-spy" (kaydırma casusu) işlevselliği ile sağlanmıştır. Bu yöntem, metin tabanlı içerik için en etkili interaktif sunum biçimidir. -->
+    <!-- Application Structure Plan: Sayfa, solda sabit bir gezinme menüsü ve sağda içerik alanı olmak üzere iki sütunlu bir yapıda tasarlandı. Kullanıcılar, menüdeki başlıklara tıklayamaz; menü sadece scroll-spy işleviyle kullanıcının nerede olduğunu gösterir. Bu yapı, uzun ve yasal bir metni sindirilebilir ve kolayca taranabilir hale getirirken, gezinme menüsünü pasif bir durum göstergesi olarak tutar. -->
+    <!-- Visualization & Content Choices: Grafiksel görselleştirme kullanılmamıştır. "Bilgiyi organize etme ve gezinme" hedefine odaklanılmıştır. Etkileşim, Vanilla JavaScript ile yönetilen ve menüyü pasif bir gösterge olarak tutan "scroll-spy" (kaydırma casusu) işlevselliği ile sağlanmıştır. Tıklama fonksiyonu tamamen kaldırılmıştır. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         @import url('https://rsms.me/inter/inter.css');
+        /* Nav öğelerini tıklanamaz span olarak değiştirdiğimiz için, sadece işaretçi stilini kaldırıyoruz */
+        .nav-item {
+            cursor: default;
+            transition: all 0.2s;
+        }
         .active-nav {
             color: #2563eb; 
             border-left-color: #2563eb; 
@@ -29,16 +34,16 @@
             <!-- Kenar Gezinme Menüsü (Desktop) -->
             <aside class="hidden lg:block w-64 shrink-0">
                 <nav id="desktop-nav" class="sticky top-8 flex flex-col space-y-2">
-                    <h3 class="text-lg font-bold mb-2 text-slate-900">Politika İçeriği</h3>
-                    <!-- Tıklanabilirlik ve scroll-spy işlevi korunuyor. -->
-                    <a  class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">Giriş</a>
-                    <a class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">1. Topladığımız Bilgiler</a>
-                    <a class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">2. Google AdMob</a>
-                    <a  class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">3. Bilgilerin Kullanımı</a>
-                    <a class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">4. Üçüncü Taraf Sağlayıcılar</a>
-                    <a  class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">5. Veri Güvenliği</a>
-                    <a  class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">6. Değişiklikler</a>
-                    <a  class="nav-link border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600 transition-colors duration-200">7. Bize Ulaşın</a>
+                    <h3 class="text-lg font-bold mb-2 text-slate-900">Policy Content</h3>
+                    <!-- Click functionality removed and converted to span tags. data-target is kept for scroll-spy. -->
+                    <span  class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">Introduction</span>
+                    <span " class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">1. Information We Collect</span>
+                    <span  class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">2. Google AdMob</span>
+                    <span class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">3. Use of Information</span>
+                    <span  class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">4. Third-Party Providers</span>
+                    <span class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">5. Data Security</span>
+                    <span class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">6. Changes to This Policy</span>
+                    <span  class="nav-item border-l-2 border-transparent pl-4 py-2 text-slate-600 hover:text-blue-600 hover:border-blue-600">7. Contact Us</span>
                 </nav>
             </aside>
 
@@ -46,83 +51,84 @@
             <main class="flex-1 min-w-0">
                 <div class="prose prose-slate max-w-none prose-h1:text-4xl prose-h1:font-bold prose-h1:text-slate-900 prose-h2:text-2xl prose-h2:font-semibold prose-h2:text-slate-900 prose-h3:text-slate-800 prose-a:text-blue-600 hover:prose-a:text-blue-700">
                     
-                    <section id="giris" class="scroll-mt-20">
+                    <!-- IDs removed, replaced with data-id. -->
+                    <section data-id="giris">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                             <h1>Gizlilik Politikası</h1>
-                             <p class="lead text-lg text-slate-600">Bu sayfa, hizmetlerimizi kullanırken verilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz hakkında size şeffaf bilgiler sunmak için tasarlanmıştır. Yasal bir belge olmasına rağmen, içeriği anlaşılır ve erişilebilir kılmak için bu interaktif formatı tercih ettik. Kenardaki menüyü kullanarak ilgilendiğiniz bölüme doğrudan ulaşabilirsiniz.</p>
-                             <p>Bu Gizlilik Politikası, Enes Altunbağ tarafından geliştirilen oyunlar tarafından toplanan, kullanılan ve ifşa edilen kişisel bilgilerinizle ilgili politikalarımızı ve prosedürlerimizi açıklamaktadır. Uygulamamızı kullanarak bu politikada belirtilen bilgilerin toplanmasını ve kullanılmasını kabul etmiş olursunuz.</p>
+                             <h1>Privacy Policy</h1>
+                             <p class="lead text-lg text-slate-600">This page is designed to provide you with transparent information about how we collect, use, and protect your data when you use our services. Although this is a legal document, we have chosen this interactive format to make the content understandable and accessible. The sidebar menu only serves as an indicator of where you are on the page.</p>
+                             <p>This Privacy Policy explains our policies and procedures regarding the collection, use, and disclosure of your personal information by the games developed by Enes Altunbağ. By using our Application, you agree to the collection and use of information in accordance with this policy.</p>
                         </div>
                     </section>
 
-                    <section id="bilgiler" class="scroll-mt-20">
+                    <section data-id="bilgiler">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>1. Topladığımız Bilgiler</h2>
-                            <p>Uygulamamız doğrudan kişisel kimlik bilgilerini (ad, e-posta adresi vb.) toplamamaktadır. Ancak, hizmetlerimizi sağlamak, reklamcılığı desteklemek ve Uygulamamızın performansını analiz etmek amacıyla üçüncü taraf hizmetleri aracılığıyla belirli otomatik veriler toplanabilir.</p>
-                            <h3>Otomatik Olarak Toplanan Bilgiler:</h3>
+                            <h2>1. Information We Collect</h2>
+                            <p>Our Application does not directly collect personally identifiable information (such as name, email address, etc.). However, certain automated data may be collected through third-party services for the purpose of providing our services, supporting advertising, and analyzing our Application's performance.</p>
+                            <h3>Information Automatically Collected:</h3>
                             <ul>
-                                <li><strong>Cihaz Bilgileri:</strong> Cihazınızın modeli, işletim sistemi sürümü, cihazınızın benzersiz tanımlayıcıları, IP adresi ve cihazınızın dil ayarları.</li>
-                                <li><strong>Kullanım Verileri:</strong> Uygulamayı ne zaman ve nasıl kullandığınız (örneğin, açılış saatleri, uygulamada geçirilen süre, hangi özelliklerin kullanıldığı).</li>
+                                <li><strong>Device Information:</strong> Your device model, operating system version, unique device identifiers, IP address, and device language settings.</li>
+                                <li><strong>Usage Data:</strong> When and how you use the Application (e.g., launch times, time spent in the app, which features are used).</li>
                             </ul>
                         </div>
                     </section>
 
-                    <section id="admob" class="scroll-mt-20">
+                    <section data-id="admob">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>2. Google AdMob ve Reklamcılık</h2>
-                            <p>Uygulamamızın sürdürülmesi için reklamcılık hizmetlerini kullanmaktayız. Reklam gösterimi için Google’ın bir hizmeti olan <strong>Google AdMob</strong>'u kullanıyoruz.</p>
-                            <p><strong>AdMob, Google tarafından sağlanan bir reklam hizmetidir.</strong> Bu hizmet, size daha alakalı reklamlar sunmak amacıyla, yukarıda belirtilen cihaz ve kullanım verilerini (cihaz tanımlayıcıları, IP adresi, coğrafi konum bilgileri) kullanabilir. Google, bu bilgileri diğer uygulamalar ve web sitelerindeki faaliyetlerinizle birleştirerek ilgi alanlarınıza dayalı reklamlar gösterebilir.</p>
+                            <h2>2. Google AdMob and Advertising</h2>
+                            <p>We use advertising services to maintain our Application. We use <strong>Google AdMob</strong>, a service provided by Google, for displaying advertisements.</p>
+                            <p><strong>AdMob is an advertising service provided by Google.</strong> This service may use the device and usage data mentioned above (device identifiers, IP address, geographical location information) to serve you more relevant advertisements. Google may combine this information with your activities across other applications and websites to display interest-based ads.</p>
                             <ul>
-                                <li><strong>Kişiselleştirilmiş Reklamlar:</strong> Varsayılan olarak AdMob, verilerinizi kişiselleştirilmiş reklamlar göstermek için kullanabilir.</li>
-                                <li><strong>Reklam Seçenekleri:</strong> Uygulama içinde veya cihazınızın ayarları aracılığıyla reklam kişiselleştirmesini devre dışı bırakma seçeneğine sahip olabilirsiniz.</li>
-                                <li><strong>Daha Fazla Bilgi:</strong> Google'ın reklam hizmetlerinde verileri nasıl kullandığı hakkında daha fazla bilgi edinmek için lütfen <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google'ın Gizlilik ve Şartlar sayfasını</a> ziyaret edin.</li>
+                                <li><strong>Personalized Ads:</strong> By default, AdMob may use your data to show personalized ads.</li>
+                                <li><strong>Ad Choices:</strong> You may have the option to disable ad personalization within the Application or through your device settings.</li>
+                                <li><strong>More Information:</strong> To learn more about how Google uses data in its advertising services, please visit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy & Terms page</a>.</li>
                             </ul>
                         </div>
                     </section>
 
-                    <section id="kullanim" class="scroll-mt-20">
+                    <section data-id="kullanim">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>3. Bilgilerin Kullanımı</h2>
-                            <p>Toplanan bilgileri aşağıdaki amaçlarla kullanırız:</p>
+                            <h2>3. Use of Information</h2>
+                            <p>We use the collected information for the following purposes:</p>
                             <ul>
-                                <li>Uygulamayı ve hizmetlerimizi sağlamak ve sürdürmek.</li>
-                                <li>Uygulamamızı geliştirmek ve hataları gidermek.</li>
-                                <li>Size kişiselleştirilmiş veya kişiselleştirilmemiş reklamlar sunmak.</li>
-                                <li>Kullanıcı davranışını analiz etmek ve uygulamanın kullanımını ölçmek.</li>
-                                <li>Yasal yükümlülüklere uymak.</li>
+                                <li>To provide and maintain the Application and our services.</li>
+                                <li>To improve our Application and fix errors.</li>
+                                <li>To serve you personalized or non-personalized advertisements.</li>
+                                <li>To analyze user behavior and measure the use of the Application.</li>
+                                <li>To comply with legal obligations.</li>
                             </ul>
                         </div>
                     </section>
                     
-                    <section id="ucuncu-taraf" class="scroll-mt-20">
+                    <section data-id="ucuncu-taraf">
                          <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>4. Üçüncü Taraf Hizmet Sağlayıcılar</h2>
-                            <p>Uygulamamız, hizmetlerimizi kolaylaştırmak, Uygulama adına hizmet sunmak ve Uygulamamızın nasıl kullanıldığını analiz etmemize yardımcı olmak için üçüncü taraf şirketleri ve bireyleri (örneğin <strong>Google AdMob</strong>) kullanabilir. Bu üçüncü taraflar, görevlerini yerine getirmek için bilgilerinize erişebilir, ancak bu bilgileri başka herhangi bir amaçla ifşa etmemek veya kullanmamakla yükümlüdürler.</p>
+                            <h2>4. Third-Party Service Providers</h2>
+                            <p>Our Application may employ third-party companies and individuals (such as <strong>Google AdMob</strong>) to facilitate our services, provide the service on our behalf, or assist us in analyzing how our Application is used. These third parties have access to your information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
                         </div>
                     </section>
 
-                    <section id="guvenlik" class="scroll-mt-20">
+                    <section data-id="guvenlik">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>5. Veri Güvenliği</h2>
-                            <p>Kişisel bilgilerinizin güvenliği bizim için önemlidir, ancak internet üzerinden hiçbir aktarım yönteminin veya elektronik depolama yönteminin %100 güvenli olduğunu unutmayın. Bilgilerinizi korumak için ticari olarak kabul edilebilir yöntemleri kullanmaya çalışsak da mutlak güvenliğini garanti edemeyiz.</p>
+                            <h2>5. Data Security</h2>
+                            <p>The security of your personal information is important to us, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.</p>
                         </div>
                     </section>
 
-                    <section id="degisiklikler" class="scroll-mt-20">
+                    <section data-id="degisiklikler">
                          <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>6. Bu Gizlilik Politikasındaki Değişiklikler</h2>
-                            <p>Gizlilik Politikamızı zaman zaman güncelleyebiliriz. Herhangi bir değişiklik olduğunda yeni Gizlilik Politikası'nı bu sayfada yayınlayacağız. Değişiklikler bu sayfada yayınlandıktan hemen sonra yürürlüğe girer. Bu Gizlilik Politikası'nı periyodik olarak incelemeniz tavsiye edilir.</p>
+                            <h2>6. Changes to This Privacy Policy</h2>
+                            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Changes are effective immediately after they are posted on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
                         </div>
                     </section>
                     
-                    <section id="iletisim" class="scroll-mt-20">
+                    <section data-id="iletisim">
                         <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-slate-200 mb-8">
-                            <h2>7. Bize Ulaşın</h2>
-                            <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:</p>
+                            <h2>7. Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, please contact us:</p>
                             <ul>
-                                <li>E-posta ile: <a href="mailto:enesaltunbagdev@gmail.com">enesaltunbagdev@gmail.com</a></li>
+                                <li>By email: <a href="mailto:enesaltunbagdev@gmail.com">enesaltunbagdev@gmail.com</a></li>
                                
                             </ul>
-                            <p class="text-sm text-slate-500 mt-4"><strong>Son Güncelleme Tarihi:</strong> [10/10/2025]</p>
+                            <p class="text-sm text-slate-500 mt-4"><strong>Last Updated:</strong> [10/10/2025]</p>
                         </div>
                     </section>
 
@@ -133,13 +139,14 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigasyon öğelerini ve section'ları seçerken yeni data niteliklerini kullanıyoruz.
     const sections = document.querySelectorAll('main section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Navigasyon öğelerini span olarak değiştirdiğimiz için link class yerine item class'ı kullandım.
+    const navItems = document.querySelectorAll('.nav-item');
 
     const observerOptions = {
         root: null,
-        // Bu ayar, aktif etme çizgisini viewport'un üstünden %20 aşağıya çeker.
-        // Böylece başlık, ekranın üst kısmına daha yakın geldiğinde aktif olur.
+        // Aktif etme çizgisini viewport'un üstünden %20 aşağıya çeker.
         rootMargin: '-20% 0px 0px 0px', 
         threshold: 0
     };
@@ -147,10 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
+                // Section'ın data-id'sini okuyoruz.
+                const id = entry.target.getAttribute('data-id');
+                navItems.forEach(link => {
                     link.classList.remove('active-nav');
-                    if (link.getAttribute('href') === `#${id}`) {
+                    // Navigasyon öğesinin data-target'ı ile eşleştiriyoruz.
+                    if (link.getAttribute('data-target') === id) {
                         link.classList.add('active-nav');
                     }
                 });
@@ -162,20 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Tıklama olay dinleyicisi kaldırıldı.
-    // navLinks.forEach(link => {
-    //     link.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         const targetId = link.getAttribute('href');
-    //         const targetElement = document.querySelector(targetId);
-    //         if(targetElement) {
-    //             targetElement.scrollIntoView({
-    //                 behavior: 'smooth',
-    //                 block: 'start'
-    //             });
-    //         }
-    //     });
-    // });
+    // Tıklama olay dinleyicisi artık mevcut değil ve menü span olduğu için hiçbir tıklama eylemi tetiklenmeyecektir.
 });
 </script>
 

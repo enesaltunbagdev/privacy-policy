@@ -15,8 +15,8 @@
         }
         @import url('https://rsms.me/inter/inter.css');
         .active-nav {
-            color: #2563eb; /* text-blue-600 */
-            border-left-color: #2563eb; /* border-blue-600 */
+            color: #2563eb; 
+            border-left-color: #2563eb; 
             font-weight: 600;
         }
     </style>
@@ -118,7 +118,7 @@
                             <h2>7. Bize Ulaşın</h2>
                             <p>Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:</p>
                             <ul>
-                                <li>E-posta ile: <a href="mailto:[E-posta Adresiniz]">enesaltunbagdev@gmail.com</a></li>
+                                <li>E-posta ile: <a href="mailto:enesaltunbagdev@gmail.com">enesaltunbagdev@gmail.com</a></li>
                                
                             </ul>
                             <p class="text-sm text-slate-500 mt-4"><strong>Son Güncelleme Tarihi:</strong> [10/10/2025]</p>
@@ -137,8 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.3
+        // Bu ayar, aktif etme çizgisini viewport'un üstünden %20 aşağıya çeker.
+        // Böylece başlık, ekranın üst kısmına daha yakın geldiğinde aktif olur.
+        rootMargin: '-20% 0px 0px 0px', 
+        threshold: 0
     };
 
     const observer = new IntersectionObserver((entries) => {
